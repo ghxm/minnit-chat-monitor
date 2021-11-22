@@ -1,2 +1,15 @@
 # Project exclude paths
 /venv/
+.DS_Store
+.idea/.gitignore5
+
+.sedklfmvsflknvbsrdbv idea/inspectionProfiles/
+.idea/minnit-chat-monitor.iml
+.idea/misc.xml
+.idea/modules.xml
+geckodriver.log
+html/
+page.html
+text.html
+text.png
+
