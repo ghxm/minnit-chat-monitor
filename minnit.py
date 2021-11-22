@@ -58,6 +58,8 @@ driver.switch_to.frame(chat_iframe)
 
 iframe_html = driver.find_element(By.TAG_NAME, 'html')
 
+time.sleep(3)
+
 # scroll up
 
 i = 1
