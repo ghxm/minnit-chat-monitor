@@ -12,7 +12,7 @@ from xvfbwrapper import Xvfb
 
 
 cap = DesiredCapabilities().FIREFOX
-cap["marionette"] = False
+cap["marionette"] = True
 
 parser = argparse.ArgumentParser(description='Save chats from a minnit.chat chatroom')
 parser.add_argument("chatname", type=str,
