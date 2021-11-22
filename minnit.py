@@ -1,13 +1,18 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
-from selenium.webdriver.firefox.options import Options
 import argparse
 from xvfbwrapper import Xvfb
+
+
+cap = DesiredCapabilities().FIREFOX
+cap["marionette"] = False
 
 parser = argparse.ArgumentParser(description='Save chats from a minnit.chat chatroom')
 parser.add_argument("chatname", type=str,
@@ -35,7 +40,7 @@ else:
     display = Xvfb()
     display.start()
 
-driver = webdriver.Firefox(options=firefox_options)
+driver = webdriver.Firefox(options=firefox_options, capabilities=cap)
 driver.set_window_size(1080, 4000)
 
 action = webdriver.ActionChains(driver)
