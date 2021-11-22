@@ -7,6 +7,7 @@ from datetime import datetime
 import pandas as pd
 from selenium.webdriver.firefox.options import Options
 import argparse
+from xvfbwrapper import Xvfb
 
 parser = argparse.ArgumentParser(description='Save chats from a minnit.chat chatroom')
 parser.add_argument("chatname", type=str,
@@ -31,6 +32,8 @@ if args.headless:
     firefox_options.headless = True
 else:
     firefox_options.headless = False
+    display = Xvfb()
+    display.start()
 
 driver = webdriver.Firefox(options=firefox_options)
 driver.set_window_size(1080, 4000)
