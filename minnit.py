@@ -17,7 +17,7 @@ parser.add_argument('-o', '--outdir', type=str, help='.csv output directory (inc
 parser.add_argument('-d', '--date', type=str, help='restrict message output to date (YYYY-MM-DD)',
                     default=datetime.today().date().strftime('%Y-%m-%d'))
 parser.add_argument('--csv', action='store_true', default=False, help='CSV output (default JSON)')
-parser.add_argument('-h','--headless', action='store_true', default=False, help='use headless mode')
+parser.add_argument('-hl','--headless', action='store_true', default=False, help='use headless mode')
 
 args = parser.parse_args()
 
