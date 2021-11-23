@@ -93,6 +93,7 @@ html = html.get_attribute("outerHTML")
 
 driver.quit()
 
+display.stop()
 
 # function to parse messages
 def parse_messages(source):
@@ -128,9 +129,9 @@ if args.date is not None:
     df_messages.drop('day', axis=1, inplace=True)
 
 if args.csv:
-    output = df_messages.to_json()
-else:
     output = df_messages.to_csv(sep="\t")
+else:
+    output = df_messages.to_json()
 
 if args.outdir is not None:
     # write to chats
